@@ -1,6 +1,7 @@
 import os
 from crewai import Agent, Task, Crew
 from crewai_tools import FileReadTool, DirectoryReadTool
+from langchain.chat_models import ChatOpenAI
 from decouple import config
 
 # Setting environment variables
@@ -9,6 +10,8 @@ os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
 file_read_tool = FileReadTool()
 directory_read_tool = DirectoryReadTool('./Regulatory_Documents')
 
+model = ChatOpenAI(temperature=0, model_name=config("OPENAI_MODEL_NAME"))
+
 # Define agents with a focus on markdown output
 compliance_analyst = Agent(
     role="Regulatory Compliance Analyst",
@@ -16,6 +19,7 @@ compliance_analyst = Agent(
     With years of experience navigating the complex landscape of clinical trial regulations, you've become an expert in interpreting and applying guidelines to ensure compliance. Your deep understanding of the ICH E6(R3) and its implications for IT computerized systems in clinical trials makes you the cornerstone of this project. Your goal is to sift through these regulations, distilling the essence that will shape the SOP, ensuring it not only meets but exceeds regulatory standards.
     """,
     goal="Ensure the SOP meets all regulatory requirements.",
+    llm=model,
     tools=[file_read_tool,directory_read_tool],
     verbose=True,
 )
@@ -27,6 +31,7 @@ it_systems_specialist = Agent(
     """,
     goal="Define IT Computerized systems scope and ensure compliance.",
     tools=[file_read_tool,directory_read_tool],
+    llm=model,
     verbose=True,
 )
 
@@ -37,6 +42,7 @@ sop_writer = Agent(
     """,
     goal="Draft the SOP document in markdown format.",
     tools=[file_read_tool,directory_read_tool],
+    llm=model,
     verbose=True,
 )
 
@@ -47,6 +53,7 @@ quality_risk_manager = Agent(
     """,
     goal="Develop quality and risk management strategies in markdown format.",
     tools=[file_read_tool,directory_read_tool],
+    llm=model,
     verbose=True,
 )
 
