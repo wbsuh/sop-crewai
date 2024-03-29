@@ -69,10 +69,12 @@ Make sure to review and update these reference documents regularly to ensure you
 Included a template `sopoutline.md` to help you get started with the SOP development process. You can use this as a reference for the structure and content of your SOP. Modify it as needed to fit your specific needs and requirements.
 
 ## Limitations
-With changes to the OpenAI model to GPT-4-Turbo it is cheaper than default GPT-4 and supports a larger context window to accept more complex and detailed documents for initial analysis.
+With changes to the OpenAI model to GPT-4-Turbo it is cheaper to run than default GPT-4. Now supports a larger context window to accept more complex and detailed documents for initial analysis.
 
 ## Enhancements/ To-Do
-[ ] UI for the SOP CrewAI script
-[ ] Options to select LLM model eg. Anthrophic Opus
-[ ] Web Search Tool to augment the SOP with additional information
-[ ] SOP MD to Document conversion 
+- [ ] UI for the SOP CrewAI Writer
+- [ ] Options to select LLM model eg. Anthrophic Opus
+- [ ] Web Search Tool to augment the SOP with additional information
+- [ ] SOP MD to Document conversion 
+- [ ] Refactor Tools, Tasks, Agents
+- [ ] Add PDF search tool for SOP writer to find specific context
