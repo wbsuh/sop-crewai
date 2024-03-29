@@ -40,6 +40,7 @@ pip install -r requirements.txt
 6. In the directory create .env file and add the following:
 ```
 OPENAI_API_KEY = "YOUR_OPENAI_KEYS"
+OPENAI_MODEL_NAME = "gpt-4-0125-preview"
 ```
 
 ## How to Run 
