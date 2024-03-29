@@ -4,7 +4,7 @@ CrewAI is a template for creating business-specific Standard Operating Procedure
 
 ## Requirements
 
-To run this project, you need to have Python installed on your system. The required Python packages are listed in the `requirements.txt` file.
+To run this project, you need to have Python installed on your system. The required Python packages are listed in the `requirements.txt` file. You need a subscription to OpenAI to power the Agents.
 
 ## Installation
 
@@ -20,12 +20,24 @@ cd sop-crewai
 3. Create a virtual environment (optional but recommended)
 ```
 python -m venv venv
+
 ```
-4. Install the required packages:
+4. Activate the virtual environment:
+
+- For Windows:
+  ```
+  venv\Scripts\activate
+  ```
+- For macOS and Linux:
+  ```
+  source venv/bin/activate
+  ```
+
+5. Install the required packages:
 ```
 pip install -r requirements.txt
 ```
-5. In the directory create .env file and add the following:
+6. In the directory create .env file and add the following:
 ```
 OPENAI_API_KEY = "YOUR_OPENAI_KEYS"
 ```
@@ -55,3 +67,5 @@ Make sure to review and update these reference documents regularly to ensure you
 ## Optional 
 Included a template sopoutline markdown file to help you get started with the SOP development process. You can use this as a reference for the structure and content of your SOP. Modify it as needed to fit your specific needs and requirements.
 
+## Limitations
+Regulatory Documents for review cannot exceed OpenAI's token limit. If you have a large document, you may need to split it into smaller chunks and submit them separately. Recommendation is to use ChatGPT or Gemini to filter relevant details for the SOP and then use the SOP CrewAI script to generate the final SOP. The PDF to Markdown converter (pdf2md.py) can be used to convert the PDF to Markdown.
