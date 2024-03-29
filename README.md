@@ -66,7 +66,13 @@ Examples of reference documents include:
 Make sure to review and update these reference documents regularly to ensure your SOPs remain up-to-date with the latest guidelines and best practices.
 
 ## Optional 
-Included a template sopoutline markdown file to help you get started with the SOP development process. You can use this as a reference for the structure and content of your SOP. Modify it as needed to fit your specific needs and requirements.
+Included a template `sopoutline.md` to help you get started with the SOP development process. You can use this as a reference for the structure and content of your SOP. Modify it as needed to fit your specific needs and requirements.
 
 ## Limitations
-Regulatory Documents for review cannot exceed OpenAI's token limit. If you have a large document, you may need to split it into smaller chunks and submit them separately. Recommendation is to use ChatGPT or Gemini to filter relevant details for the SOP and then use the SOP CrewAI script to generate the final SOP. The PDF to Markdown converter (pdf2md.py) can be used to convert the PDF to Markdown.
+With changes to the OpenAI model to GPT-4-Turbo it is cheaper than default GPT-4 and supports a larger context window to accept more complex and detailed documents for initial analysis.
+
+## Enhancements/ To-Do
+[ ] UI for the SOP CrewAI script
+[ ] Options to select LLM model eg. Anthrophic Opus
+[ ] Web Search Tool to augment the SOP with additional information
+[ ] SOP MD to Document conversion 
